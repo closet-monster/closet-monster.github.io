@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AYRIVA – Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans:wght@400;600&family=Open+Sans+Condensed:wght@300;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+:root {
+  --margin: 60px 120px;
+  --text-dark: #111;
+  --text-light: #9c9c9c;
+  --border: #dcdcdc;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: #fff;
+  color: var(--text-dark);
+}
+
+.page {
+  padding: var(--margin);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* HEADER */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.nav {
+  display: flex;
+  gap: 40px;
+}
+
+.nav a {
+  font-family: 'Anton', sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: var(--text-dark);
+  transition: opacity 0.2s;
+}
+
+.nav a:hover {
+  opacity: 0.7;  /* zmiana opacity przy hover */
+}
+
+.logo h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 24px;
+  letter-spacing: 2px;
+}
+
+.logo span {
+  font-size: 10px;
+  color: var(--text-light);
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* HERO */
+
+.hero {
+  margin-bottom: 60px;
+}
+
+.hero h2 {
+  font-family: 'Anton', sans-serif;
+  font-size: 65px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 0.9;
+  color: var(--text-light);
+}
+
+/* CATEGORY BUTTONS */
+
+.categories {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 40px;
+}
+
+.category-btn {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 8px 20px;
+  border: none;
+  background: #9c9c9c;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  transition: opacity 0.2s;
+}
+
+.category-btn:hover {
+  opacity: 0.7;  /* zmiana opacity przy hover */
+}
+
+.category-btn.active {
+  background: #111;
+  color: #fff;
+}
+
+/* GRID */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.card {
+  text-decoration: none;  /* usuwa podkreślenie linku */
+  color: inherit;         /* zachowuje kolor tekstu */
+  overflow: hidden;  /* przybliżenie obrazka nie zmienia rozmiaru kafelka */
+  position: relative; 
+}
+
+.card .img-wrapper {
+  width: 100%;
+  aspect-ratio: 4 / 3;   /* zachowuje prostokątny format */
+  overflow: hidden;       /* przybliżenie działa wewnątrz wrappera */
+}
+
+.card .img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s, opacity 0.3s;
+  transform-origin: center center; /* przybliżenie od środka */
+}
+
+.card:hover .img-wrapper img {
+  opacity: 0.7;        /* 70% przezroczystości po najechaniu */
+  transform: scale(1.05);  /* minimalne przybliżenie obrazka */
+}
+
+.card:hover .card-info {
+  opacity: 0.7;            /* tekst również staje się półprzezroczysty */
+}
+
+.card-info {
+  padding: 20px 0;
+  transition: opacity 0.3s;
+}
+
+.card-info h3 {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.card-info p {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+
+.footer {
+  margin-top: 80px;
+  text-align: right;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  color: var(--text-light);
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+<div class="container">
+
+<header class="header">
+  <nav class="nav">
+    <a href=https://ayriva.github.io>portfolio</a>
+    <a href="https://www.behance.net/closetmonster">
+      <i class="fa-brands fa-square-behance"></i></i> behance
+    </a>
+    <a href="https://github.com/ayriva">
+      <i class="fa-brands fa-square-github"></i> github
+    </a>
+  </nav>
+
+  <div class="logo">
+    <h1>AYRIVA</h1>
+  </div>
+</header>
+
+<section class="hero">
+  <h2>portfolio</h2>
+</section>
+
+<div class="categories">
+  <button class="category-btn active" type="button" data-filter="all">all projects</button>
+  <button class="category-btn" type="button" data-filter="python"># python</button>
+  <button class="category-btn" type="button" data-filter="bi"># power bi</button>
+  <button class="category-btn" type="button" data-filter="design"># ux/ui design</button>
+</div>
+
+<section class="grid">
+
+  <a href="https://github.com/ayriva/Python/tree/main/Bank%20App" class="card" target="_blank" data-category="python">
+    <div class="img-wrapper">
+      <img src="https://raw.githubusercontent.com/ayriva/ayriva.github.io/refs/heads/main/img/Python_Bank_App.png" alt="">
+    </div>
+    <div class="card-info">
+      <h3>Simple Banking App</h3>
+      <p># python</p>
+    </div>
+  </a>
+
+  <a href="https://github.com/ayriva/Python/tree/main/Calendar" class="card" target="_blank" data-category="python">
+    <div class="img-wrapper">
+      <img src="https://raw.githubusercontent.com/ayriva/ayriva.github.io/refs/heads/main/img/Python_Calendar.png" alt="">
+    </div>
+    <div class="card-info">
+      <h3>Calendar App</h3>
+      <p># python</p>
+    </div>
+  </a>
+
+  <a href="https://github.com/ayriva/Power_BI/tree/main/Steam" class="card" target="_blank" data-category="bi">
+    <div class="img-wrapper">
+      <img src="https://raw.githubusercontent.com/ayriva/ayriva.github.io/refs/heads/main/img/steam.png" alt="">
+    </div>
+    <div class="card-info">
+      <h3>STEAM - Gaming Market Analysis</h3>
+      <p># power bi</p>
+    </div>
+  </a>
+
+  <a href="https://www.behance.net/gallery/141376799/Museum-of-Contemporary-Art-UXUI-Web-Redesign" class="card" target="_blank" data-category="design">
+    <div class="img-wrapper">
+      <img src="https://mir-s3-cdn-cf.behance.net/projects/original/f0c236141376799.Y3JvcCw1NzQwLDQ0ODksMCww.png" alt="">
+    </div>
+    <div class="card-info">
+      <h3>Museum of Contemporary Art - Web Redesign</h3>
+      <p># ux/ui design</p>
+    </div>
+  </a>
+
+  <a href="https://www.behance.net/gallery/140634113/Crypto-Wallet-Mobile-App-UXUI-Design" class="card" target="_blank" data-category="design">
+    <div class="img-wrapper">
+      <img src="https://mir-s3-cdn-cf.behance.net/projects/original/55b8a0140634113.Y3JvcCw0NDg4LDM1MTAsMCww.png" alt="">
+    </div>
+    <div class="card-info">
+      <h3>Crypto Wallet - Mobile App</h3>
+      <p># ux/ui design</p>
+    </div>
+  </a>
+
+  <a href="https://www.behance.net/gallery/125272285/UIUX-Design-Theatre-Website-Project" class="card" target="_blank" data-category="design">
+    <div class="img-wrapper">
+      <img src="https://mir-s3-cdn-cf.behance.net/projects/original/c89b33125272285.Y3JvcCwzNzI4LDI5MTUsMCww.png" alt="">
+    </div>
+    <div class="card-info">
+      <h3>Theatre Website</h3>
+      <p># ux/ui design</p>
+    </div>
+  </a>
+
+  <a href="https://www.behance.net/gallery/132000151/UIUX-Design-Chairs-Furniture-Store" class="card" target="_blank" data-category="design">
+    <div class="img-wrapper">
+      <img src="https://mir-s3-cdn-cf.behance.net/projects/original/8c8514132000151.Y3JvcCwzMTIyLDI0NDIsOTI3LDA.png" alt="">
+    </div>
+    <div class="card-info">
+      <h3>Furniture Store</h3>
+      <p># ux/ui design</p>
+    </div>
+  </a>
+
+  <a href="https://www.behance.net/gallery/137039031/Underwear-Store-App-Mobile-UXUI-Design" class="card" target="_blank" data-category="design">
+    <div class="img-wrapper">
+      <img src="https://mir-s3-cdn-cf.behance.net/projects/original/4994ab137039031.Y3JvcCw5NzAsNzU4LDIxNiw0MA.png" alt="">
+    </div>
+    <div class="card-info">
+      <h3>Underwear Store - Mobile App</h3>
+      <p># ux/ui design</p>
+    </div>
+  </a>
+
+  <a href="https://www.behance.net/gallery/126641239/UIUX-Design-Wallpie-Social-Networking-Website" class="card" target="_blank" data-category="design">
+    <div class="img-wrapper">
+      <img src="https://mir-s3-cdn-cf.behance.net/projects/original/e8323e126641239.Y3JvcCwzODQwLDMwMDMsMCww.png" alt="">
+    </div>
+    <div class="card-info">
+      <h3>Wallpie – Social Networking Website</h3>
+      <p># ux/ui design</p>
+    </div>
+  </a>
+
+</section>
+
+<footer class="footer">
+  © 2026 AYRIVA
+</footer>
+
+</div>
+</div>
+
+<script>
+const categoryButtons = document.querySelectorAll('.category-btn');
+const cards = document.querySelectorAll('.card');
+
+categoryButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    categoryButtons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const filter = btn.dataset.filter;
+
+    cards.forEach(card => {
+      if (filter === 'all') {
+        card.style.display = ''; // pokaz wszystkie
+      } else {
+        card.style.display = (card.dataset.category === filter) ? '' : 'none';
+      }
+    });
+  });
+});
+</script>
+
+</body>
+</html>
+
